@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Register from './components/Register';
 import Login from './components/Login';
+import Card from './components/Card';
 
 const App = () => {
   const [flag, setFlag] = useState(true);
@@ -13,6 +14,7 @@ const App = () => {
         ? <Login setFlag={setFlag} usersData={usersData} /> 
         : <Register setFlag={setFlag} setUsersData={setUsersData} usersData={usersData} />
       }
+      <Card usersData={usersData}/>
     </>
   );
 };

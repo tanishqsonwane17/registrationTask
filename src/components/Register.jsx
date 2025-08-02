@@ -29,13 +29,6 @@ const Register = ({ setFlag, setUsersData, usersData }) => {
     <p className='px-4 text-xs'>Already have an account  <span className='text-blue-600 cursor-pointer' onClick={ () => setFlag((prev)=> !prev)}>Login</span></p>
 
 
-    <div className='flex gap-6 p-12'>
-{usersData.map((user, index) => (
-  <div key={index} className='h-6 flex justify-center w-32 border rounded-lg'>
-    <h1>{user.username}</h1>
-  </div>
-))}
-    </div>
     </>
   )
 }
