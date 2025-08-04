@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
-const Register = ({ setFlag, setUsersData, usersData }) => {
+import { MyStore } from '../context/MyContext';
+const Register = () => {
+  const {usersData, setUsersData, setFlag} = useContext(MyStore);
   const { register, handleSubmit, formState: { errors, isValid }, reset } = useForm();
 
   function submitHandler(data) {
-    setUsersData([...usersData, data]); 
+    const storedData = [...usersData, data]
+    setUsersData(storedData); 
+     localStorage.setItem('users', JSON.stringify(storedData))
     console.log(" Registered:", data);
     reset();
   }  return (

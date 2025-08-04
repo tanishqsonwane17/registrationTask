@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Register from './components/Register';
 import Login from './components/Login';
 import Card from './components/Card';
+import { MyStore } from './context/MyContext';
 
 const App = () => {
-  const [flag, setFlag] = useState(true);
-  const [usersData, setUsersData] = useState([]); // global user data state
+
+const {flag, setFlag,usersData,setUsersData} = useContext(MyStore);
 
   return (
     <>
@@ -18,5 +19,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
+import { MyStore } from '../context/MyContext';
 
-const Login = ({ setFlag, setUsersData, usersData}) => {
+const Login = () => {
+  const {usersData,setFlag} = useContext(MyStore);
     const {register, handleSubmit, formState: {errors, isValid}, reset} = useForm()
 function submitHandler(data) {
   const user = usersData.find((user) => user.email === data.email && user.password === data.password);

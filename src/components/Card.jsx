@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MyStore } from '../context/MyContext';
 
-const Card = ({usersData}) => {
+const Card = () => {
+const {usersData} = useContext(MyStore);
   return (
     <div>
 
