@@ -7,9 +7,7 @@ import { MyProvider } from './context/MyContext.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <MyProvider>
-
-          <App />
-
+      <App />
     </MyProvider>
   </StrictMode>,
 )

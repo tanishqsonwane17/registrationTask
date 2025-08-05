@@ -8,8 +8,8 @@ const {usersData} = useContext(MyStore);
 
             <div className='flex gap-6 p-12'>
 {usersData.map((user, index) => (
-  <div key={index} className='flex h-6 w-32 justify-center border rounded-lg'>
-    <h1>{user.username}</h1>
+  <div key={index} className='flex p-4  justify-center border rounded-lg'>
+    <h1 className='flex flex-col gap-4'>{user.username} <h5>{user.email}</h5> <h6>{user.mobile}</h6></h1>
   </div>
 ))}
     </div>
