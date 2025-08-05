@@ -10,7 +10,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors, isValid },
     reset
-  } = useForm({ mode: 'onChange' }); // 👈 live validation enabled
+  } = useForm({ mode: 'onChange' }); 
 
   function submitHandler(data) {
     const storedData = [...usersData, data];
@@ -26,7 +26,6 @@ const Register = () => {
         onSubmit={handleSubmit(submitHandler)}
         className='flex flex-col gap-3 w-56 p-4'
       >
-        {/* Username */}
         <input
           className='border px-4 py-2 rounded'
           {...register('username', { required: true })}
@@ -37,7 +36,6 @@ const Register = () => {
           <span className='text-red-500'>Username is required</span>
         )}
 
-        {/* Email */}
         <input
           className='border px-4 py-2 rounded'
           {...register('email', { required: true })}
@@ -48,11 +46,10 @@ const Register = () => {
           <span className='text-red-500'>Email is required</span>
         )}
 
-        {/* Mobile */}
         <input
           className='border px-4 py-2 rounded'
           {...register('mobile', { required: true, minLength: 10 })}
-          type="text" // 👈 minLength works with text, not number
+          type="text" 
           placeholder='Mobile'
         />
         {errors.mobile?.type === 'required' && (
@@ -62,7 +59,6 @@ const Register = () => {
           <span className='text-red-500'>Mobile must be at least 10 digits</span>
         )}
 
-        {/* Password */}
         <input
           className='border px-4 py-2 rounded'
           {...register('password', { required: true })}
@@ -73,7 +69,6 @@ const Register = () => {
           <span className='text-red-500'>Password is required</span>
         )}
 
-        {/* Submit Button */}
         <button
           disabled={!isValid}
           className={`border px-4 py-2 rounded text-white ${
